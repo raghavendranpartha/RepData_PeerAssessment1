@@ -113,6 +113,9 @@ print(paste("Median total steps per day is ",median(totalsteps_imp$steps),sep=" 
 ```
 ## [1] "Median total steps per day is  10766.1886792453"
 ```
+
+The strategy for missing value imputation used is as follows - for each missing value, the mean of the number of steps across all days for the corresponding 5 minute time interval is imputed.
+
 The mean of total steps per day is the same value for the imputed data set as the original data set. The median
 is however equal to the mean in the imputed data set, whereas it is different in the original data set. In the imputed
 data set we assign each missing value to be equal to the mean of that 5 minute time interval, and hence the mean remains unchanged. The imputing of this mean value into the data however means that the median also becomes equal to the mean. The histogram of the imputed dataset is identical to the original except for the bin containing the mean value. Due to the multiple imputations of the mean value, the bin containing the mean value is higher in the imputed data set compared to the original dataset. Thus, we find that imputing missing values increases the sum of total value of the number of steps per day, however without affecting the mean of the total steps per day
